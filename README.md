@@ -1,16 +1,82 @@
-# React + Vite
+# Network Delay Simulator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive React app for learning and analyzing network delay behavior in data communication systems.
 
-Currently, two official plugins are available:
+The simulator lets you change distance, packet size, medium type, and bandwidth, then instantly visualizes:
+- Propagation delay
+- Transmission delay
+- Total delay
+- Bandwidth-delay product (BDP)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+It is designed as an educational tool for students and anyone learning networking fundamentals.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Real-time delay calculation updates from input changes
+- Side-by-side network medium comparison (fiber, copper, wireless)
+- Step-by-step formula breakdown for each metric
+- Graph-based analysis of delay trends
+- Live simulation panel and explanatory content
+- In-browser only execution (no backend, no stored data)
 
-## Expanding the ESLint configuration
+## Core Formulas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Propagation Delay = Distance / Propagation Speed in Medium
+- Transmission Delay = Packet Size (bits) / Bandwidth (bps)
+- Total Delay = Propagation Delay + Transmission Delay
+- Bandwidth-Delay Product = Bandwidth x Propagation Delay
+
+## Tech Stack
+
+- React 19
+- Vite 8
+- Recharts (graph visualizations)
+- Framer Motion (animations)
+- ESLint for linting
+
+## Project Structure
+
+- `src/App.jsx`: Main app shell and section layout
+- `src/components/`: UI panels and visual modules
+- `src/utils/calculations.js`: Delay formulas, conversions, and graph data generators
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start development server
+
+```bash
+npm run dev
+```
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Preview production build
+
+```bash
+npm run preview
+```
+
+## Use Cases
+
+- Data Communication and Computer Networks coursework
+- Demonstrating latency concepts in classroom/lab settings
+- Comparing impact of medium, packet size, and bandwidth on performance
+
+## License
+
+This project is for educational use.
